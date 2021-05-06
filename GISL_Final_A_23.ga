@@ -1,0 +1,210 @@
+{
+    "a_galaxy_workflow": "true", 
+    "format-version": "0.1", 
+    "name": "GISL_Final_A_23", 
+    "steps": {
+        "1": {
+            "tool_id": null, 
+            "content_id": null, 
+            "uuid": "32a703aa-b46e-471b-a9f2-e88e4cfc3983", 
+            "tool_version": null, 
+            "outputs": [], 
+            "workflow_outputs": [], 
+            "annotation": "", 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "CNA_INPUT"
+                }
+            ], 
+            "tool_errors": null, 
+            "position": {
+                "top": 561, 
+                "left": 306
+            }, 
+            "tool_state": "{\"name\": \"CNA_INPUT\"}", 
+            "label": null, 
+            "type": "data_input", 
+            "id": 1, 
+            "name": "Input dataset"
+        }, 
+        "0": {
+            "tool_id": null, 
+            "content_id": null, 
+            "uuid": "9b45cc32-ccd2-44c1-a1a5-171ca46477a2", 
+            "tool_version": null, 
+            "outputs": [], 
+            "workflow_outputs": [], 
+            "annotation": "", 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "VCF_INPUT"
+                }
+            ], 
+            "tool_errors": null, 
+            "position": {
+                "top": 476, 
+                "left": 301
+            }, 
+            "tool_state": "{\"name\": \"VCF_INPUT\"}", 
+            "label": null, 
+            "type": "data_input", 
+            "id": 0, 
+            "name": "Input dataset"
+        }, 
+        "3": {
+            "tool_id": "GISL_Final_a_SC23_tool", 
+            "content_id": "GISL_Final_a_SC23_tool", 
+            "uuid": "e1ea0c36-d7b0-469c-871c-d7be76d4c5c7", 
+            "tool_version": "0.1.0", 
+            "outputs": [
+                {
+                    "type": "txt", 
+                    "name": "2A"
+                }, 
+                {
+                    "type": "txt", 
+                    "name": "2B"
+                }, 
+                {
+                    "type": "txt", 
+                    "name": "3A"
+                }, 
+                {
+                    "type": "txt", 
+                    "name": "3B"
+                }
+            ], 
+            "post_job_actions": {}, 
+            "workflow_outputs": [
+                {
+                    "output_name": "3B", 
+                    "uuid": "c8ec91fc-f103-43b3-9981-de1ce2afcb97", 
+                    "label": null
+                }, 
+                {
+                    "output_name": "3A", 
+                    "uuid": "674921ee-e789-422d-b6af-8721581d9533", 
+                    "label": null
+                }, 
+                {
+                    "output_name": "2A", 
+                    "uuid": "20fbe4b4-a673-4d67-af15-81de27f4ac6c", 
+                    "label": null
+                }, 
+                {
+                    "output_name": "2B", 
+                    "uuid": "364116c4-8e0c-4fe7-a937-47a9dc4cfbc1", 
+                    "label": null
+                }
+            ], 
+            "annotation": "", 
+            "input_connections": {
+                "input_vcf": {
+                    "output_name": "output", 
+                    "id": 0
+                }, 
+                "input_cellularity": {
+                    "output_name": "output", 
+                    "id": 2
+                }, 
+                "input_battenberg": {
+                    "output_name": "output", 
+                    "id": 1
+                }
+            }, 
+            "inputs": [], 
+            "tool_errors": null, 
+            "position": {
+                "top": 498, 
+                "left": 602.5
+            }, 
+            "tool_state": "{\"__page__\": 0, \"__rerun_remap_job_id__\": null, \"input_vcf\": \"null\", \"input_cellularity\": \"null\", \"input_battenberg\": \"null\"}", 
+            "label": null, 
+            "type": "tool", 
+            "id": 3, 
+            "name": "GISL_Final_a_SC23"
+        }, 
+        "2": {
+            "tool_id": null, 
+            "content_id": null, 
+            "uuid": "ff194ade-a5ea-451d-9a16-1444ff449f3e", 
+            "tool_version": null, 
+            "outputs": [], 
+            "workflow_outputs": [], 
+            "annotation": "", 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "CELLULARITY_INPUT"
+                }
+            ], 
+            "tool_errors": null, 
+            "position": {
+                "top": 657, 
+                "left": 306
+            }, 
+            "tool_state": "{\"name\": \"CELLULARITY_INPUT\"}", 
+            "label": null, 
+            "type": "data_input", 
+            "id": 2, 
+            "name": "Input dataset"
+        }, 
+        "4": {
+            "tool_id": "smc_het_eval", 
+            "content_id": "smc_het_eval", 
+            "uuid": "fec0cc66-1f67-4215-976b-c627224b52c8", 
+            "tool_version": "0.1.0", 
+            "outputs": [
+                {
+                    "type": "txt", 
+                    "name": "outfile"
+                }
+            ], 
+            "post_job_actions": {}, 
+            "workflow_outputs": [
+                {
+                    "output_name": "outfile", 
+                    "uuid": "02b83ec1-80e3-4a49-90f9-7415b5eafd8c", 
+                    "label": null
+                }
+            ], 
+            "annotation": "", 
+            "input_connections": {
+                "cocluster_assignment|ancestor|predfile": {
+                    "output_name": "3B", 
+                    "id": 3
+                }, 
+                "cluster_assignment|predfile": {
+                    "output_name": "2A", 
+                    "id": 3
+                }, 
+                "cocluster_assignment|predfile": {
+                    "output_name": "2B", 
+                    "id": 3
+                }, 
+                "cluster_assignment|phylogeny|predfile": {
+                    "output_name": "3A", 
+                    "id": 3
+                }
+            }, 
+            "inputs": [], 
+            "tool_errors": null, 
+            "position": {
+                "top": 577, 
+                "left": 912.5
+            }, 
+            "tool_state": "{\"cocluster_assignment\": \"{\\\"ancestor\\\": {\\\"predfile\\\": null, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}, \\\"predfile\\\": null, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\", \"__page__\": 0, \"approx\": \"{\\\"enable\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\", \"__rerun_remap_job_id__\": null, \"proportion\": \"{\\\"submit\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\", \"sample\": \"\\\"/opt/galaxy/data/Tumour1/Tumour1\\\"\", \"cellularity\": \"{\\\"submit\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\", \"cluster_assignment\": \"{\\\"predfile\\\": null, \\\"phylogeny\\\": {\\\"predfile\\\": null, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\", \"population\": \"{\\\"submit\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\"}", 
+            "label": null, 
+            "type": "tool", 
+            "id": 4, 
+            "name": "SMC-Het Evaluator"
+        }
+    }, 
+    "annotation": "Method A for SC23", 
+    "uuid": "bde19753-1c83-4cf7-a04e-33a708fe24a7"
+}
